@@ -1,0 +1,355 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eightbit Gallery</title>
+    <style>
+      body {
+        font-family: Termina, sans-serif;
+        color: #111;
+        background: #eee;
+        overflow-x: hidden;
+      }
+
+      section {
+        padding: 10vw;
+        height: 100%;
+        min-height: 500vh;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: visible;
+      }
+
+      .credit {
+        text-align: center;
+        z-index: 999;
+        font-size: 0.8rem;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      .credit a {
+        color: #fff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      h1 {
+        font-weight: 800;
+        margin: 2rem auto;
+        font-size: clamp(3vw, 2rem, 4rem);
+        text-align: center;
+        z-index: 999;
+        max-width: 800px;
+        mix-blend-mode: difference;
+        pointer-events: none;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: grid;
+        place-items: center;
+      }
+
+      .gallery {
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: visible;
+      }
+
+      @media (max-width: 768px) {
+        .gallery {
+          width: 160%;
+        }
+      }
+
+      .col {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        width: 100%;
+        align-self: flex-start;
+        justify-self: flex-start;
+      }
+
+      .col:nth-child(2) {
+        align-self: flex-end;
+        justify-self: flex-end;
+      }
+
+      .image {
+        width: 100%;
+        filter: saturate(0);
+        padding: 1rem;
+      }
+
+      .image:hover {
+        z-index: 99999999999 !important;
+        filter: saturate(1);
+      }
+
+      img {
+        transition: 0.3s ease-out;
+        overflow: hidden;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+          0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+          0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+          0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+        width: 100%;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="../loader.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <div id="col">
+        <div id="img-wrap">
+          <span class="loader"></span>
+        </div>
+      </div>
+    </div>
+    <div class="content hidden">
+      <section>
+        <h1>EightBit</h1>
+      </section>
+
+      <div class="gallery">
+        <div class="col">
+          <div class="image">
+            <img
+              src="https://media1.tenor.com/images/0660efe82fa3da42ed56eef013171835/tenor.gif?itemid=16596559"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://media.giphy.com/media/K5kfQExKk731K/giphy.gif"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://www.bing.com/th/id/OGC.91b513350e4fc3e7ac634fbcca36fc25?pid=1.7&rurl=https%3a%2f%2fmedia1.giphy.com%2fmedia%2fRbDKaczqWovIugyJmW%2fgiphy.gif&ehk=%2fB6Z7%2fiCpPxfiXebbsotZc5A%2fb4Vo8EAU9xGMKuHg98%3d"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://th.bing.com/th/id/OIP.4fNBO_UDYEVxM0E5T2FyJQAAAA?rs=1&pid=ImgDetMain"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://th.bing.com/th/id/OIP.DoSzl1b7-1ALtatIapewPwHaFY?rs=1&pid=ImgDetMain"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://media3.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://thumbs.dreamstime.com/z/programming-coding-linear-concept-vector-round-banner-letters-code-many-web-development-server-icons-92289726.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/mage.png"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/Hype.png"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/blog.jpg"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/crypto.jpg"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/compiler.png"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/mage.png"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/Hype.png"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/blog.jpg"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/mage.png"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/Hype.png"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://rishabhcv.netlify.app/assets/images/blog.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="image">
+            <img
+              src="https://th.bing.com/th/id/OIP.DoSzl1b7-1ALtatIapewPwHaFY?rs=1&pid=ImgDetMain"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://th.bing.com/th/id/OIP.t9yPs562gITaxQZhfqXvVQHaLG?w=1184&h=1775&rs=1&pid=ImgDetMain"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://thumbs.dreamstime.com/z/programming-coding-linear-concept-vector-round-banner-letters-code-many-web-development-server-icons-92289726.jpg"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://media1.tenor.com/images/0660efe82fa3da42ed56eef013171835/tenor.gif?itemid=16596559"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://th.bing.com/th/id/OIP.tmSHGTX9YJIfqEUUz9nbBgHaEK?rs=1&pid=ImgDetMain"
+              alt=""
+            />
+          </div>
+          <div class="image">
+            <img
+              src="https://th.bing.com/th/id/OIP.4fNBO_UDYEVxM0E5T2FyJQAAAA?rs=1&pid=ImgDetMain"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../loader.js"></script>
+    <script>
+      console.clear();
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const additionalY = { val: 0 };
+      let additionalYAnim;
+      let offset = 0;
+      const cols = gsap.utils.toArray(".col");
+
+      cols.forEach((col, i) => {
+        const images = col.childNodes;
+
+        // DUPLICATE IMAGES FOR LOOP
+        images.forEach((image) => {
+          var clone = image.cloneNode(true);
+          col.appendChild(clone);
+        });
+
+        // SET ANIMATION
+        images.forEach((item) => {
+          let columnHeight = item.parentElement.clientHeight;
+          let direction = i % 2 !== 0 ? "+=" : "-="; // Change direction for odd columns
+
+          gsap.to(item, {
+            y: direction + Number(columnHeight / 2),
+            duration: 15,
+            repeat: -1,
+
+            modifiers: {
+              y: gsap.utils.unitize((y) => {
+                if (direction == "+=") {
+                  offset += additionalY.val;
+                  y = (parseFloat(y) - offset) % (columnHeight * 1);
+                } else {
+                  offset += additionalY.val;
+                  y = (parseFloat(y) + offset) % -Number(columnHeight * 1);
+                }
+
+                return y;
+              }),
+            },
+          });
+        });
+      });
+
+      const imagesScrollerTrigger = ScrollTrigger.create({
+        trigger: "section",
+        start: "top 50%",
+        end: "bottom 50%",
+        onUpdate: function (self) {
+          const velocity = self.getVelocity();
+          if (velocity > 0) {
+            if (additionalYAnim) additionalYAnim.kill();
+            additionalY.val = -velocity / 2000;
+            additionalYAnim = gsap.to(additionalY, { val: 0 });
+          }
+          if (velocity < 0) {
+            if (additionalYAnim) additionalYAnim.kill();
+            additionalY.val = -velocity / 3000;
+            additionalYAnim = gsap.to(additionalY, { val: 0 });
+          }
+        },
+      });
+    </script>
+  </body>
+</html>
